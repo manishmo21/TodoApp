@@ -19,16 +19,21 @@ module.exports.saveToDo = async (req, res) => {
 module.exports.updateToDo = async (req, res) => {
   const { _id, text } = req.body;
   Todo.findByIdAndUpdate(_id, { text }).then(() => {
-    res.send("Updated Successfully").catch((error) => {
-      console.log(error);
-    });
+    res.send("Updated")
+    // res.send("Updated Successfully").catch((error) => {
+    //   console.log(error);
+    // });
   });
 };
 module.exports.deleteToDo = async (req, res) => {
   const { _id } = req.body;
-  Todo.findByIdAndDelete(_id).then(() => {
-    res.send("Deleted Successfully").catch((error) => {
+  Todo.findByIdAndDelete(_id)
+    .then(() => {
+      res.send("Deleted Successfully");
+    })
+    .catch((error) => {
       console.log(error);
+      res.status(500).send("Error occurred while deleting the todo");
     });
-  });
 };
+
