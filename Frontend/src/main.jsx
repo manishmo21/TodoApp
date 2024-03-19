@@ -18,7 +18,8 @@ function Main() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Todo App</h1>
+        <h1>Task Manager
+</h1>
         <div className="top">
           <input
             type="text"
