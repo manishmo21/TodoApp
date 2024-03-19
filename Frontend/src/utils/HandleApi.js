@@ -3,7 +3,7 @@ import axios from "axios";
 const baseUrl = "https://todoapp-xint.onrender.com";
 
 const getAllToDo = (setToDo) => {
-  axios.get(`${baseUrl}/`).then((response) => {
+  axios.get(`https://todoapp-xint.onrender.com/`).then((response) => {
     console.log("Data:", response.data);
     setToDo(response.data);
   });
